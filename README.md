@@ -8,7 +8,7 @@ Features:
 
 You can find the sample README below. Feel free to modify it to suit your project.
 
-Note: The MIT license is referenced , but this repo is actually under the Unlicense. I license most of my projects under MIT, so I put that in the template.
+Note: The MIT license is referenced, but this repo is actually under the Unlicense. I license most of my projects under MIT, so I put it in the template.
 ```
 
 
