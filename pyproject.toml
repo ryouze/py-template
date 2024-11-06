@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "py-template"
+version = "0.1.0"
+description = "Barebones Python project template."
+authors = ["ryouze <mirai@ryouze.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+loguru = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+testpaths = ["tests"]
+
+[tool.poetry.scripts]
+py-template = "py_template.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
