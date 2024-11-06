@@ -6,9 +6,7 @@ Features:
 - CI with GitHub Actions.
 - Unlicense for unrestricted use.
 
-You can find the template README below.
-
-Do whatever you want with this template, no need to credit me :)
+You can find the sample README below.
 ```
 
 
