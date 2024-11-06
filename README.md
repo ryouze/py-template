@@ -114,9 +114,10 @@ pytest -v
 **Note:** Installing the dev dependencies using pip is not supported due to syntax differences in the `pyproject.toml` file. However, if you insist on using pip, you can install the project in [editable mode](https://pip.pypa.io/en/stable/topics/local-project-installs/) (`pip install -e .`) and then manually install the dev dependencies under `[tool.poetry.group.dev.dependencies]` in `pyproject.toml`.
 
 
-<!-- ## Credits
+## Credits
 
-- [name](https://github.com/) -->
+- [loguru](https://github.com/Delgan/loguru)
+- [pytest](https://github.com/pytest-dev/pytest)
 
 
 ## Contributing
