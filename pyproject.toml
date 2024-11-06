@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "py-template"
 version = "0.1.0"
-description = "Barebones Python project template."
+description = "Barebones Python project template"
 authors = ["ryouze <mirai@ryouze.net>"]
 
 [tool.poetry.dependencies]
