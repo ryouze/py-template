@@ -78,7 +78,7 @@ Follow these steps to set up the project:
     ```sh
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install .
+    pip install .
     ```
 
     **Note:** This installs only production dependencies (i.e., for regular users). To install development dependencies, refer to the [Development and Testing](#development-and-testing) section.
