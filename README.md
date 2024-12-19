@@ -73,12 +73,12 @@ Follow these steps to set up the project:
     poetry shell
     ```
 
-    **Option 2: Pip (if you don't want to use 3rd-party build tools)**:
+    **Option 2: Pip in [editable mode](https://pip.pypa.io/en/stable/topics/local-project-installs/) (if you don't want to use 3rd-party build tools)**:
 
     ```sh
     python3 -m venv .env
     source .env/bin/activate
-    pip install .
+    pip install -e .
     ```
 
     **Note:** This installs only production dependencies (i.e., for regular users). To install development dependencies, refer to the [Development and Testing](#development-and-testing) section.
@@ -118,7 +118,7 @@ To run tests manually, activate the virtual environment and run:
 pytest -v
 ```
 
-**Note:** Installing the dev dependencies using pip is not supported due to syntax differences in the `pyproject.toml` file. However, if you insist on using pip, you can install the project in [editable mode](https://pip.pypa.io/en/stable/topics/local-project-installs/) (`pip install -e .`) and then manually install the dev dependencies under `[tool.poetry.group.dev.dependencies]` in `pyproject.toml`.
+**Note:** Installing the dev dependencies using pip is not supported due to syntax differences in the `pyproject.toml` file. However, if you insist on using pip, you can manually install the packages listed under `[tool.poetry.group.dev.dependencies]`.
 
 
 ## Credits
