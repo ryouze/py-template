@@ -66,7 +66,7 @@ Follow these steps to set up the project:
     cd py-template
     ```
 
-    **Option 1: Poetry (recommended)**:
+    **Option 1: [Poetry](https://python-poetry.org/) (recommended)**:
 
     ```sh
     poetry install --without dev
@@ -82,6 +82,13 @@ Follow these steps to set up the project:
     ```
 
     **Note:** This installs only production dependencies (i.e., for regular users). To install development dependencies, refer to the [Development and Testing](#development-and-testing) section.
+
+    Alternatively, the `generate_requirements.py` script can be used to generate `requirements.txt` for the traditional `pip install -r requirements.txt` method. Compatibility with this method is not guaranteed, as the project uses `poetry` for dependency management.
+
+    ```sh
+    python3 generate_requirements.py
+    pip install -r requirements.txt
+    ```
 
 
 ## Usage
