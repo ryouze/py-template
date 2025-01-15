@@ -81,8 +81,6 @@ Follow these steps to set up the project:
     pip install -e .
     ```
 
-    **Note:** This installs only production dependencies (i.e., for regular users). To install development dependencies, refer to the [Development and Testing](#development-and-testing) section.
-
     Alternatively, the `generate_requirements.py` script can be used to generate `requirements.txt` for the traditional `pip install -r requirements.txt` method. Compatibility with this method is not guaranteed, as the project uses `poetry` for dependency management.
 
     ```sh
@@ -90,10 +88,13 @@ Follow these steps to set up the project:
     pip install -r requirements.txt
     ```
 
+    **Note:** All of the methods listed above install only production dependencies (i.e., for regular users). To install development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
+
 
 ## Usage
 
-**Note:** You must activate the virtual environment (`poetry shell` or `source .env/bin/activate`) every time you open a new terminal. Most IDEs can activate the venv automatically (VSCode: `python.terminal.activateEnvInCurrentTerminal`).
+> [!IMPORTANT]
+> You must activate the virtual environment (`poetry shell` or `source .env/bin/activate`) every time you open a new terminal. Most IDEs can activate the venv automatically (VSCode: `python.terminal.activateEnvInCurrentTerminal`).
 
 To run the program, use the following command:
 
@@ -118,7 +119,8 @@ To run tests manually, activate the virtual environment and run:
 pytest -v
 ```
 
-**Note:** Installing the dev dependencies using pip is not supported due to syntax differences in the `pyproject.toml` file. However, if you insist on using pip, you can manually install the packages listed under `[tool.poetry.group.dev.dependencies]`.
+> [!NOTE]
+> Installing the dev dependencies using pip is not supported due to syntax differences in the `pyproject.toml` file. However, if you insist on using pip, you can manually install the packages listed under `[tool.poetry.group.dev.dependencies]`.
 
 
 ## Credits
