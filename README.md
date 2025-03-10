@@ -35,7 +35,7 @@ Text here.
 
 This project has been tested on the following systems:
 
-- macOS 15.1 (Sequoia)
+- macOS 15.3 (Sequoia)
 <!-- - Manjaro 24.0 (Wynsdey)
 - Windows 11 23H2 -->
 
