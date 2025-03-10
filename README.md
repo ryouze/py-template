@@ -73,6 +73,8 @@ Follow these steps to set up the project:
     poetry shell
     ```
 
+    If `poetry shell` doesn't work, install the [poetry-plugin-shell](https://github.com/python-poetry/poetry-plugin-shell).
+
     **Option 2: Pip in [editable mode](https://pip.pypa.io/en/stable/topics/local-project-installs/) (if you don't want to use 3rd-party build tools)**:
 
     ```sh
