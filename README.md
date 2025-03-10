@@ -26,7 +26,7 @@ Text here.
 
 ## Features
 
-- Written in modern Python (Python 3.11+).
+- Written in modern Python (Python 3.12+).
 - Comprehensive documentation with docstrings.
 - Strict static typing.
 
@@ -39,14 +39,14 @@ This project has been tested on the following systems:
 <!-- - Manjaro 24.0 (Wynsdey)
 - Windows 11 23H2 -->
 
-Automated testing is also performed on the latest version of GNU/Linux (Python 3.11-3.13) using GitHub Actions.
+Automated testing is also performed on the latest version of GNU/Linux (Python 3.12-3.13) using GitHub Actions.
 
 
 ## Requirements
 
 To run this project, you'll need:
 
-- Python 3.11 or higher
+- Python 3.12 or higher
 - [Poetry](https://python-poetry.org/) (optional for users, required for developers)
 
 
