@@ -6,6 +6,11 @@ Example module.
 
 from random import randint as _randint
 
+__all__: list[str] = [
+    "bar",
+    "baz",
+]
+
 
 def bar() -> int:
     """
