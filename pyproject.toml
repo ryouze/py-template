@@ -1,5 +1,6 @@
 [project]
 name = "py-template"
+dynamic = ["version"]
 description = "Barebones Python project template"
 authors = [
     {name = "ryouze", email = "mirai@ryouze.net"}
@@ -10,7 +11,6 @@ requires-python = ">=3.12,<4.0"
 dependencies = [
     "loguru (>=0.7.3,<0.8.0)"
 ]
-dynamic = ["version"]
 
 [project.scripts]
 # Run the app using `poetry run py-template`
@@ -33,9 +33,10 @@ pytest = "*"
 addopts = ["--import-mode=importlib"]
 testpaths = ["tests"]
 
-
 [tool.poetry-dynamic-versioning]
 enable = true
+vcs = "git"
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
 build-backend = "poetry_dynamic_versioning.backend"
