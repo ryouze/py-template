@@ -3,6 +3,7 @@ name = "py-template"
 version = "0.1.0"
 description = "Barebones Python project template"
 authors = ["ryouze <mirai@ryouze.net>"]
+license = { file = "LICENSE" }  # The wheel will then contain the full text and won’t get an automatic Trove classifier; consider using `license = "MIT"` based on your use case
 
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"  # Upper bound so the wheel does not claim compatibility with future major versions
