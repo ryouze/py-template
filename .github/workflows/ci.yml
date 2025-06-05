@@ -55,8 +55,8 @@ jobs:
           poetry config virtualenvs.create true --local
           poetry config virtualenvs.in-project true --local
 
-      - name: Install dependencies
-        run: poetry install
+      - name: Install all dependencies
+        run: poetry install --all-groups
 
       - name: Test
         run: poetry run pytest -v
