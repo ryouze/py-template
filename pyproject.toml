@@ -5,7 +5,7 @@ description = "Barebones Python project template"
 authors = ["ryouze <mirai@ryouze.net>"]
 
 [tool.poetry.dependencies]
-python = ">=3.12"
+python = ">=3.12,<4.0"  # Upper bound so the wheel does not claim compatibility with future major versions
 loguru = "*"
 
 [tool.poetry.group.dev.dependencies]
