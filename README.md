@@ -66,25 +66,25 @@ Follow these steps to set up the project:
     cd py-template
     ```
 
+    To install only the production dependencies (i.e., for regular users), choose one of the following options:
+
     **Option 1: [Poetry](https://python-poetry.org/) (recommended)**:
 
     <!--
     ## Groups:
-    * `--without dev` installs every non-optional group except `dev`.
-    * `--only main` installs nothing except the implicit main group, so it will silently drop any future non-dev groups you might add (e.g., `docs` or `bench`).
+    * '--without dev' installs every non-optional group except 'dev'.
+    * '--only main' installs nothing except the implicit main group, so it will silently drop any future non-dev groups you might add (e.g., 'docs' or 'bench').
 
-    The Poetry maintainers recommend `--without dev` for a production install and `--only main` only when you know you want to strip out everything but the runtime set.
-
-    ---
+    The Poetry maintainers recommend '--without dev' for a production install and '--only main' only when you know you want to strip out everything but the runtime set. However, since we set the 'dev' group as optional, 'poetry install' will only install the production dependencies by default, so you can skip the '--without dev' flag.
 
     ## Virtual-environment activation:
-    The old `poetry shell` command moved to a plugin. Thus, `poetry env` activate is now the built-in way to enter the venv; it only prints the shell command.
+    The old 'poetry shell' command moved to a plugin. Thus, 'poetry env' activate is now the built-in way to enter the venv; it only prints the shell command.
 
-    Use `eval $(poetry env activate)` for Bourne-like shells, `eval (poetry env activate)` for Fish and `Invoke-Expression (poetry env activate)` for PowerShell.
+    Use 'eval $(poetry env activate)' for Bourne-like shells, 'eval (poetry env activate)' for Fish and 'Invoke-Expression (poetry env activate)' for PowerShell.
     -->
 
     ```sh
-    poetry install --without dev
+    poetry install
     eval $(poetry env activate)
     ```
 
@@ -103,7 +103,7 @@ Follow these steps to set up the project:
     pip install -r requirements.txt
     ```
 
-    **Note:** All of the methods listed above install only production dependencies (i.e., for regular users). To install development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
+    **Note:** To install development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
 
 
 ## Usage
@@ -120,13 +120,15 @@ py-template
 
 ## Development and Testing
 
-The `--without dev` flag in `poetry install` skips the installation of dev dependencies like `pytest`.
+The `poetry install` skips the installation of dev dependencies (e.g., `pytest`), because they're marked as `optional = true`.
 
 To install all dependencies (including development), use:
 
 ```sh
-poetry install
+poetry install --all-groups
 ```
+
+Or `poetry install --with dev` to install only the `dev` group, but the `--all-groups` option is recommended to ensure all non-production dependencies are installed.
 
 To run tests manually, activate the virtual environment and run:
 

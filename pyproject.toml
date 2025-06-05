@@ -9,6 +9,10 @@ license = { file = "LICENSE" }  # The wheel will then contain the full text and 
 python = ">=3.12,<4.0"  # Upper bound so the wheel does not claim compatibility with future major versions
 loguru = "*"
 
+[tool.poetry.group.dev]
+# Ensure that `poetry install` does not install dev dependencies by default; they should only be installed with `poetry install --with dev`
+optional = true
+
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
 
