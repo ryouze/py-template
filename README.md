@@ -35,6 +35,8 @@
 # py-template
 
 [![CI](https://github.com/ryouze/py-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ryouze/py-template/actions/workflows/ci.yml)
+[![Release](https://github.com/ryouze/py-template/actions/workflows/release.yml/badge.svg)](https://github.com/ryouze/py-template/actions/workflows/release.yml)
+![Release version](https://img.shields.io/github/v/release/ryouze/py-template)
 
 py-template is a barebones Python project template.
 
