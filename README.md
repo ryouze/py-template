@@ -1,44 +1,47 @@
 > ## About this template
 >
-> Minimal Python project template built around Poetry.
+> A minimal Python project template built around Poetry.
+>
 > Features:
-> * Poetry for dependency management, pytest for testing.
-> * CI pipeline on GitHub Actions.
-> * Unlicense by default for unrestricted reuse (no need to credit me).
 >
-> I usually download it as a `.zip` to skip all the Git history and metadata.
+> * Poetry for dependency management, and pytest for testing.
+> * CI pipeline using GitHub Actions.
+> * Unlicense by default for unrestricted reuse (no attribution required).
 >
-> Here are the steps to set it up for your own project.
+> Follow these steps to set it up for your own project.
 >
-> ### 1. Pick a license
+> ### 1. Choose a license
 >
-> The repo ships with the Unlicense, but the text mentions MIT because most of my own projects use MIT.
-> Replace the `LICENSE` file in the root of this repository with MIT, Apache-2.0, BSD-3, or any other license you prefer.
+> Tip: The repository uses the Unlicense by default, but the text mentions MIT because most of my projects use MIT.
+> Replace the `LICENSE` file (at the root of this repository) with MIT, Apache-2.0, BSD-3, or any other license you prefer.
 >
-> ### 2. Pick a project name
+> ### 2. Choose a project name
 >
-> Choose two forms of the name:
-> * `your_project` - import/package name
-> * `your-project` - distribution name
+> You’ll need two forms of the project name:
 >
-> Replace every placeholder:
-> * Rename directory `py_template/` to `your_project/` (root of this repository).
-> * Search-replace `py_template` -> `your_project` (in all files).
-> * Search-replace `py-template` -> `your-project` (in all files).
-> * Search-replace `ryouze` -> `your_github_username` (in all files).
+> * `your_project` - the import/package name
+> * `your-project` - the distribution name
+>
+> Replace the following placeholders:
+>
+> * Rename the `py_template/` directory to `your_project/` (at the root of this repository).
+> * Search and replace `py_template` with `your_project` (in all files).
+> * Search and replace `py-template` with `your-project` (in all files).
+> * Search and replace `ryouze` with your GitHub username (in all files).
 >
 > ### 3. Update metadata
 >
-> Edit `pyproject.toml` and change the following fields:
-> * `license` - your license.
-> * `description` - same slogan as in the README.
-> * `authors` - name & e-mail.
-> * `license` - keep `license = { file = "LICENSE" }`, or replace with `license = "MIT"` (or another SPDX identifier) for clean PyPI classification
+> Edit `pyproject.toml` and update the following fields:
 >
-> ### 4. Remove stuff
+> * `license` - your chosen license.
+> * `description` - same short description as in the README.
+> * `authors` - your name and email.
+> * `license` - keep `license = { file = "LICENSE" }`, or use `license = "MIT"` (or another SPDX identifier) for cleaner PyPI classification.
 >
-> Remove `poetry.lock` so that it gets regenerated with your dependencies on next `poetry install`.
-> Remove this section from the README.
+> ### 4. Remove unnecessary files
+>
+> Delete `poetry.lock` so that it gets regenerated with your dependencies on the next `poetry install`.
+> Also remove this section from the README.
 
 
 # py-template
@@ -76,14 +79,16 @@ Automated testing is also performed on the latest version of GNU/Linux (Python 3
 To run this project, you'll need:
 
 - Python 3.12 or higher
-- [Poetry](https://python-poetry.org/) (optional)
+- [Poetry](https://python-poetry.org/) (optional and only for developers)
 
 
 ## Setup
 
-### Pipx (For Users)
+### Pipx (Recommended for Users)
 
-For users who just want to run the app, the recommended way to install it is via `pipx`. This allows you to run the app in any directory, with easy updates and isolation from other Python packages. Poetry is *NOT* required for this installation method.
+If you just want to run the app, the recommended method is to install it with [pipx](https://github.com/pypa/pipx). This allows you to run the app from any directory, enables easy updates, and keeps it isolated from other Python packages. Poetry is *not* required for this installation method.
+
+To install the app with `pipx`, use the following command:
 
 ```sh
 pipx install git+https://github.com/ryouze/py-template.git
@@ -95,10 +100,10 @@ To update to the latest version, use:
 pipx upgrade py-template
 ```
 
-Once installed, refer to the [Usage](#usage) section for further instructions.
+Once installed, refer to the [Usage](#usage) section.
 
 
-### Poetry or pip (For Developers)
+### Poetry or pip (Recommended for Developers)
 
 Follow these steps to set up the project:
 
@@ -138,32 +143,32 @@ Follow these steps to set up the project:
     pip install -e .
     ```
 
-    This will only install the production dependencies. To install the development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
+    This installs only the production dependencies. To install development dependencies as well, see the [Development and Testing](#development-and-testing) section.
 
 
 ## Usage
 
-**a) If installed with pipx, you can run the app from any directory**:
+**a) If installed via pipx, you can run the app from any directory**:
 
 ```sh
 py-template
 ```
 
-**b) If installed with Poetry, you don't need to activate the virtual environment, instead, simply run this from the project directory**:
+**b) If installed via Poetry, there's no need to activate the virtual environment. Simply run this from the project directory**:
 
 ```sh
 poetry run py-template
 ```
 
-The `eval $(poetry env activate)` is still available, though, to activate the virtual environment manually if needed.
+You can still manually activate the virtual environment using `eval $(poetry env activate)` if needed.
 
-**c) If you're using `pip` in editable mode, you need to activate the virtual environment first**:
+**c) If installed via pip in editable mode, activate the virtual environment first**:
 
 ```sh
 source .env/bin/activate
 ```
 
-Or enable the virtual environment automatically in your terminal or IDE settings. For example, in VSCode, you can set the `python.terminal.activateEnvInCurrentTerminal` setting to `true`.
+Or configure your terminal or IDE to automatically activate the virtual environment. For example, in VSCode, set `python.terminal.activateEnvInCurrentTerminal` to `true`.
 
 Then you can run the command directly:
 
@@ -174,9 +179,9 @@ py-template
 
 ## Development and Testing
 
-The `poetry install` skips the installation of dev dependencies (e.g., `pytest`), because they're marked as `optional = true`.
+By default, `poetry install` skips dev dependencies (e.g., `pytest`) because they're marked as `optional = true`.
 
-To install all dependencies (including development), use:
+To install all dependencies, including development ones, run:
 
 ```sh
 poetry install --all-groups
