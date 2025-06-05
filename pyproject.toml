@@ -1,13 +1,22 @@
-[tool.poetry]
+[project]
 name = "py-template"
 version = "0.1.0"
 description = "Barebones Python project template"
-authors = ["ryouze <mirai@ryouze.net>"]
-license = "MIT"
+authors = [
+    {name = "ryouze", email = "mirai@ryouze.net"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "loguru (>=0.7.3,<0.8.0)"
+]
 
-[tool.poetry.dependencies]
-python = ">=3.12,<4.0"
-loguru = "*"
+[project.scripts]
+# Run the app using `poetry run py-template`
+py-template = "py_template.__main__:main"
+
+[tool.poetry]
 
 [tool.poetry.group.dev]
 # Ensure that `poetry install` does not install dev dependencies by default; they should only be installed with `poetry install --with dev`
@@ -19,9 +28,6 @@ pytest = "*"
 [tool.pytest.ini_options]
 addopts = ["--import-mode=importlib"]
 testpaths = ["tests"]
-
-[tool.poetry.scripts]
-py-template = "py_template.__main__:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
