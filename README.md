@@ -27,6 +27,7 @@
 > ### 3. Update metadata
 >
 > Edit `pyproject.toml` and change the following fields:
+> * `license` - your license.
 > * `description` - same slogan as in the README.
 > * `authors` -  name & e-mail.
 > * `license` - keep `license = { file = "LICENSE" }`, or replace with `license = "MIT"` (or another SPDX identifier) for clean PyPI classification
@@ -62,6 +63,29 @@ This project has been tested on the following systems:
 - Windows 11 23H2 -->
 
 Automated testing is also performed on the latest version of GNU/Linux (Python 3.12-3.13) using GitHub Actions.
+
+
+## Pre-built Wheels
+
+Pre-built wheels are available. You can download the latest version from the [Releases](../../releases) page using [pipx](https://github.com/pypa/pipx):
+
+```sh
+pipx install https://github.com/ryouze/py-template/releases/download/v0.1.0/py_template-0.1.0-py3-none-any.whl
+```
+
+This is the recommended choice for users who want to just run the app instead of dealing with setting up a virtual environment; it does not require poetry either.
+
+Update:
+
+```sh
+pipx upgrade py-template
+```
+
+Uninstall:
+
+```sh
+pipx uninstall poetry
+```
 
 
 ## Requirements
@@ -115,26 +139,34 @@ Follow these steps to set up the project:
     pip install -e .
     ```
 
-    Alternatively, the `generate_requirements.py` script can be used to generate `requirements.txt` for the traditional `pip install -r requirements.txt` method. Compatibility with this method is not guaranteed, as the project uses `poetry` for dependency management.
-
-    ```sh
-    python3 generate_requirements.py
-    pip install -r requirements.txt
-    ```
-
-    **Note:** To install development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
+    If you want to install the development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
 
 
 ## Usage
 
-> [!IMPORTANT]
-> You must activate the virtual environment (`eval $(poetry env activate)` or `source .env/bin/activate`) every time you open a new terminal. Most IDEs can activate the venv automatically (VSCode: `python.terminal.activateEnvInCurrentTerminal`).
-
-To run the program, use the following command:
+a) If you've installed the project using `pipx`, you can run the command directly:
 
 ```sh
 py-template
 ```
+
+b) If you're using `poetry`, you don't need to activate the virtual environment, instead, simply run:
+
+```sh
+poetry run py-template
+```
+
+The `eval $(poetry env activate)` is still available, though.
+
+c) If you're using `pip` in editable mode, you need to activate the virtual environment first.
+
+You can do it manually with:
+
+```sh
+source .env/bin/activate
+```
+
+Or enable the virtual environment automatically in your terminal or IDE settings. For example, in VSCode, you can set the `python.terminal.activateEnvInCurrentTerminal` setting to `true`.
 
 
 ## Development and Testing
