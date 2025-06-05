@@ -16,20 +16,21 @@
 > ### 2. Pick a project name
 >
 > Choose two forms of the name:
-> * `your_project`  – import/package name
-> * `your-project`  – distribution name
+> * `your_project` - import/package name
+> * `your-project` - distribution name
 >
 > Replace every placeholder:
 > * Rename directory `py_template/` to `your_project/`.
 > * Search-replace `py_template` -> `your_project`.
 > * Search-replace `py-template` -> `your-project`.
+> > * Search-replace `ryouze` -> `your_github_username`.
 >
 > ### 3. Update metadata
 >
 > Edit `pyproject.toml` and change the following fields:
 > * `license` - your license.
 > * `description` - same slogan as in the README.
-> * `authors` -  name & e-mail.
+> * `authors` - name & e-mail.
 > * `license` - keep `license = { file = "LICENSE" }`, or replace with `license = "MIT"` (or another SPDX identifier) for clean PyPI classification
 
 
@@ -67,24 +68,28 @@ Automated testing is also performed on the latest version of GNU/Linux (Python 3
 
 ## Pre-built Wheels
 
-Pre-built wheels are available. You can download the latest version from the [Releases](../../releases) page using [pipx](https://github.com/pypa/pipx):
+Pre-built wheels are available. You can install the latest version from the [Releases](../../releases) page using [pipx](https://github.com/pypa/pipx):
 
 ```sh
-pipx install https://github.com/ryouze/py-template/releases/download/v0.1.0/py_template-0.1.0-py3-none-any.whl
+pipx install https://github.com/ryouze/py-template/releases/latest/download/py_template-latest-py3-none-any.whl
 ```
 
-This is the recommended choice for users who want to just run the app instead of dealing with setting up a virtual environment; it does not require poetry either.
+This is the recommended choice for users who just want to run the app.
 
-Update:
+If that doesn't work, you can install it from the latest source code (slower, not recommended), try the following:
 
 ```sh
-pipx upgrade py-template
+pipx install git+https://github.com/ryouze/py-template.git
 ```
 
-Uninstall:
+> [!NOTE]
+> This won't set the version to the latest release, since `poetry-dynamic-versioning` runs on `poetry build`.
+
+If you want to update to the latest version, please note that the app is not on PyPI, so you cannot use `pipx upgrade`. Instead, you can uninstall the current version and install the new one:
 
 ```sh
-pipx uninstall poetry
+pipx uninstall py-template
+pipx install https://github.com/ryouze/py-template/releases/latest/download/py_template-latest-py3-none-any.whl
 ```
 
 
@@ -97,6 +102,9 @@ To run this project, you'll need:
 
 
 ## Setup
+
+> [!NOTE]
+> For users who *just want to run the app*, using `pipx` is recommended (see the [Pre-built Wheels](#pre-built-wheels) section).
 
 Follow these steps to set up the project:
 
@@ -112,9 +120,7 @@ Follow these steps to set up the project:
     cd py-template
     ```
 
-    To install only the production dependencies (i.e., for regular users), choose one of the following options:
-
-    **Option 1: [Poetry](https://python-poetry.org/) (recommended)**:
+    **Option 1 - Poetry**:
 
     <!--
     Groups:
@@ -128,10 +134,9 @@ Follow these steps to set up the project:
 
     ```sh
     poetry install
-    eval $(poetry env activate)
     ```
 
-    **Option 2: Pip in [editable mode](https://pip.pypa.io/en/stable/topics/local-project-installs/) (if you don't want to use 3rd-party build tools)**:
+    **Option 2 - pip in editable mode**:
 
     ```sh
     python3 -m venv .env
@@ -139,28 +144,26 @@ Follow these steps to set up the project:
     pip install -e .
     ```
 
-    If you want to install the development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
+    This will only install the production dependencies. To install the development dependencies as well, refer to the [Development and Testing](#development-and-testing) section.
 
 
 ## Usage
 
-a) If you've installed the project using `pipx`, you can run the command directly:
+**a) If installed with pipx, you can run the app from any directory**:
 
 ```sh
 py-template
 ```
 
-b) If you're using `poetry`, you don't need to activate the virtual environment, instead, simply run:
+**b) If installed with Poetry, you don't need to activate the virtual environment, instead, simply run this from the project directory**:
 
 ```sh
 poetry run py-template
 ```
 
-The `eval $(poetry env activate)` is still available, though.
+The `eval $(poetry env activate)` is still available, though, to activate the virtual environment manually, if needed.
 
-c) If you're using `pip` in editable mode, you need to activate the virtual environment first.
-
-You can do it manually with:
+**c) If you're using `pip` in editable mode, you need to activate the virtual environment first**:
 
 ```sh
 source .env/bin/activate
@@ -175,7 +178,7 @@ py-template
 ```
 
 
-## Development and Testing
+****## Development and Testing
 
 The `poetry install` skips the installation of dev dependencies (e.g., `pytest`), because they're marked as `optional = true`.
 
@@ -192,9 +195,6 @@ To run tests manually, activate the virtual environment and run:
 ```sh
 pytest -v
 ```
-
-> [!NOTE]
-> Installing the dev dependencies using pip is not supported due to syntax differences in the `pyproject.toml` file. However, if you insist on using pip, you can manually install the packages listed under `[tool.poetry.group.dev.dependencies]`.
 
 
 ## Credits
