@@ -8,14 +8,16 @@ on:
     branches:
       - main
     paths-ignore:
+      - "**/*.md"
       - "LICENSE"
-      - "README.md"
+      #- ".gitignore"
   pull_request:
     branches:
       - main
     paths-ignore:
+      - "**/*.md"
       - "LICENSE"
-      - "README.md"
+      #- ".gitignore"
 
 permissions:
   contents: write
