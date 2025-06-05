@@ -168,6 +168,12 @@ source .env/bin/activate
 
 Or enable the virtual environment automatically in your terminal or IDE settings. For example, in VSCode, you can set the `python.terminal.activateEnvInCurrentTerminal` setting to `true`.
 
+Then you can run the command directly:
+
+```sh
+py-template
+```
+
 
 ## Development and Testing
 
