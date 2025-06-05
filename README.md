@@ -4,14 +4,16 @@
 > Features:
 > * Poetry for dependency management, pytest for testing.
 > * CI pipeline on GitHub Actions.
-> * Unlicense by default for unrestricted reuse.
+> * Unlicense by default for unrestricted reuse (no need to credit me).
 >
-> Clone it, rename it, pick a license, and start coding. Follow the steps below, then delete this block.
+> I usually download it as a `.zip` to skip all the Git history and metadata.
+>
+> Here are the steps to set it up for your own project.
 >
 > ### 1. Pick a license
 >
 > The repo ships with the Unlicense, but the text mentions MIT because most of my own projects use MIT.
-> Replace the `LICENSE` file with MIT, Apache-2.0, BSD-3, or any other license you prefer.
+> Replace the `LICENSE` file in the root of this repository with MIT, Apache-2.0, BSD-3, or any other license you prefer.
 >
 > ### 2. Pick a project name
 >
@@ -20,10 +22,10 @@
 > * `your-project` - distribution name
 >
 > Replace every placeholder:
-> * Rename directory `py_template/` to `your_project/`.
-> * Search-replace `py_template` -> `your_project`.
-> * Search-replace `py-template` -> `your-project`.
-> > * Search-replace `ryouze` -> `your_github_username`.
+> * Rename directory `py_template/` to `your_project/` (root of this repository).
+> * Search-replace `py_template` -> `your_project` (in all files).
+> * Search-replace `py-template` -> `your-project` (in all files).
+> * Search-replace `ryouze` -> `your_github_username` (in all files).
 >
 > ### 3. Update metadata
 >
@@ -37,8 +39,6 @@
 # py-template
 
 [![CI](https://github.com/ryouze/py-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ryouze/py-template/actions/workflows/ci.yml)
-[![Release](https://github.com/ryouze/py-template/actions/workflows/release.yml/badge.svg)](https://github.com/ryouze/py-template/actions/workflows/release.yml)
-![Release version](https://img.shields.io/github/v/release/ryouze/py-template)
 
 py-template is a barebones Python project template.
 
@@ -66,47 +66,34 @@ This project has been tested on the following systems:
 Automated testing is also performed on the latest version of GNU/Linux (Python 3.12-3.13) using GitHub Actions.
 
 
-## Pre-built Wheels
-
-Pre-built wheels `(*.whl`) are available. You can install the latest version from the [Releases](../../releases) page using [pipx](https://github.com/pypa/pipx):
-
-```sh
-pipx install https://github.com/ryouze/py-template/releases/latest/download/py_template-latest-py3-none-any.whl
-```
-
-This is the recommended choice for users who just want to run the app. Only the required dependencies will be installed, and the app will be available globally in any directory as `py-template`.
-
-If that doesn't work, you can install it from the latest source code (slower, not recommended), try the following:
-
-```sh
-pipx install git+https://github.com/ryouze/py-template.git
-```
-
-> [!NOTE]
-> This won't set the `__version__` to the latest release because `poetry-dynamic-versioning` runs on `poetry build`; you'll get the fallback version from `pyproject.toml` instead.
-
-If you want to update to the latest version, please note that the app is not on PyPI, so you cannot use `pipx upgrade`. Instead, you can uninstall the current version and install the latest one again:
-
-```sh
-pipx uninstall py-template
-pipx install https://github.com/ryouze/py-template/releases/latest/download/py_template-latest-py3-none-any.whl
-```
-
-Once installed, refer to the [Usage](#usage) section for further instructions.
-
-
 ## Requirements
 
 To run this project, you'll need:
 
 - Python 3.12 or higher
-- [Poetry](https://python-poetry.org/) (optional for users, required for developers)
+- [Poetry](https://python-poetry.org/) (optional)
 
 
 ## Setup
 
-> [!NOTE]
-> For users who *just want to run the app*, using `pipx` is recommended (see the [Pre-built Wheels](#pre-built-wheels) section).
+### Pipx (For Users)
+
+For users who just want to run the app, the recommended way to install it is via `pipx`. This allows you to run the app in any directory, with easy updates and isolation from other Python packages. Poetry is *NOT* required for this installation method.
+
+```sh
+pipx install git+https://github.com/ryouze/py-template.git
+```
+
+To update to the latest version, use:
+
+```sh
+pipx upgrade py-template
+```
+
+Once installed, refer to the [Usage](#usage) section for further instructions.
+
+
+### Poetry or pip (For Developers)
 
 Follow these steps to set up the project:
 
