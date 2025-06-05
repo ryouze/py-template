@@ -68,13 +68,13 @@ Automated testing is also performed on the latest version of GNU/Linux (Python 3
 
 ## Pre-built Wheels
 
-Pre-built wheels are available. You can install the latest version from the [Releases](../../releases) page using [pipx](https://github.com/pypa/pipx):
+Pre-built wheels `(*.whl`) are available. You can install the latest version from the [Releases](../../releases) page using [pipx](https://github.com/pypa/pipx):
 
 ```sh
 pipx install https://github.com/ryouze/py-template/releases/latest/download/py_template-latest-py3-none-any.whl
 ```
 
-This is the recommended choice for users who just want to run the app.
+This is the recommended choice for users who just want to run the app. Only the required dependencies will be installed, and the app will be available globally in any directory as `py-template`.
 
 If that doesn't work, you can install it from the latest source code (slower, not recommended), try the following:
 
@@ -83,14 +83,16 @@ pipx install git+https://github.com/ryouze/py-template.git
 ```
 
 > [!NOTE]
-> This won't set the version to the latest release, since `poetry-dynamic-versioning` runs on `poetry build`.
+> This won't set the `__version__` to the latest release because `poetry-dynamic-versioning` runs on `poetry build`; you'll get the fallback version from `pyproject.toml` instead.
 
-If you want to update to the latest version, please note that the app is not on PyPI, so you cannot use `pipx upgrade`. Instead, you can uninstall the current version and install the new one:
+If you want to update to the latest version, please note that the app is not on PyPI, so you cannot use `pipx upgrade`. Instead, you can uninstall the current version and install the latest one again:
 
 ```sh
 pipx uninstall py-template
 pipx install https://github.com/ryouze/py-template/releases/latest/download/py_template-latest-py3-none-any.whl
 ```
+
+Once installed, refer to the [Usage](#usage) section for further instructions.
 
 
 ## Requirements
@@ -161,7 +163,7 @@ py-template
 poetry run py-template
 ```
 
-The `eval $(poetry env activate)` is still available, though, to activate the virtual environment manually, if needed.
+The `eval $(poetry env activate)` is still available, though, to activate the virtual environment manually if needed.
 
 **c) If you're using `pip` in editable mode, you need to activate the virtual environment first**:
 
@@ -178,7 +180,7 @@ py-template
 ```
 
 
-****## Development and Testing
+## Development and Testing
 
 The `poetry install` skips the installation of dev dependencies (e.g., `pytest`), because they're marked as `optional = true`.
 
