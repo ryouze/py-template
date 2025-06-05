@@ -68,6 +68,21 @@ Follow these steps to set up the project:
 
     **Option 1: [Poetry](https://python-poetry.org/) (recommended)**:
 
+    <!--
+    ## Groups:
+    * `--without dev` installs every non-optional group except `dev`.
+    * `--only main` installs nothing except the implicit main group, so it will silently drop any future non-dev groups you might add (e.g., `docs` or `bench`).
+
+    The Poetry maintainers recommend `--without dev` for a production install and `--only main` only when you know you want to strip out everything but the runtime set.
+
+    ---
+
+    ## Virtual-environment activation:
+    The old `poetry shell` command moved to a plugin. Thus, `poetry env` activate is now the built-in way to enter the venv; it only prints the shell command.
+
+    Use `eval $(poetry env activate)` for Bourne-like shells, `eval (poetry env activate)` for Fish and `Invoke-Expression (poetry env activate)` for PowerShell.
+    -->
+
     ```sh
     poetry install --without dev
     eval $(poetry env activate)
