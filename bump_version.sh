@@ -37,7 +37,7 @@ fi
 
 # Commit the change
 git add pyproject.toml
-git commit -m "Bump version to $new_version"
+git commit -m "Bumped version to $new_version."
 
 # Create Git tag
 git tag "v$new_version"

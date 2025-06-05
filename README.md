@@ -42,6 +42,10 @@
 >
 > Delete `poetry.lock` so that it gets regenerated with your dependencies on the next `poetry install`.
 > Also remove this section from the README.
+>
+> ### 5. Bumping the version
+>
+> Use `bump_version.sh` to bump the version number in `pyproject.toml` and create a Git tag.
 
 
 # py-template
@@ -88,13 +92,13 @@ To run this project, you'll need:
 
 If you just want to run the app, the recommended method is to install it with [pipx](https://github.com/pypa/pipx). This allows you to run the app from any directory, enables easy updates, and keeps it isolated from other Python packages. Poetry is *not* required for this installation method.
 
-To install the app with `pipx`, use the following command:
+To install the app with `pipx`, run:
 
 ```sh
 pipx install git+https://github.com/ryouze/py-template.git
 ```
 
-To update to the latest version, use:
+To update to the latest version, run:
 
 ```sh
 pipx upgrade py-template
