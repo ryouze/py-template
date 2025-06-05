@@ -18,6 +18,9 @@ py-template = "py_template.__main__:main"
 
 [tool.poetry]
 
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
 [tool.poetry.group.dev]
 # Ensure that `poetry install` does not install dev dependencies by default; they should only be installed with `poetry install --with dev`
 optional = true
