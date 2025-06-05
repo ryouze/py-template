@@ -34,6 +34,11 @@
 > * `description` - same slogan as in the README.
 > * `authors` - name & e-mail.
 > * `license` - keep `license = { file = "LICENSE" }`, or replace with `license = "MIT"` (or another SPDX identifier) for clean PyPI classification
+>
+> ### 4. Remove stuff
+>
+> Remove `poetry.lock` so that it gets regenerated with your dependencies on next `poetry install`.
+> Remove this section from the README.
 
 
 # py-template
