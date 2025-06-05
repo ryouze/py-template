@@ -1,15 +1,35 @@
-```
-This is a barebones Python project template.
-
-Features:
-- Poetry for dependencies, pytest for testing.
-- CI with GitHub Actions.
-- Unlicense for unrestricted use.
-
-You can find the sample README below. Feel free to modify it to suit your project.
-
-Note: The MIT license is referenced, but this repo is actually under the Unlicense. I license most of my projects under MIT, so I put it in the template.
-```
+> ## About this template
+>
+> Minimal Python project template built around Poetry.
+> Features:
+> * Poetry for dependency management, pytest for testing.
+> * CI pipeline on GitHub Actions.
+> * Unlicense by default for unrestricted reuse.
+>
+> Clone it, rename it, pick a license, and start coding. Follow the steps below, then delete this block.
+>
+> ### 1. Pick a license
+>
+> The repo ships with the Unlicense, but the text mentions MIT because most of my own projects use MIT.
+> Replace the `LICENSE` file with MIT, Apache-2.0, BSD-3, or any other license you prefer.
+>
+> ### 2. Pick a project name
+>
+> Choose two forms of the name:
+> * `your_project`  – import/package name
+> * `your-project`  – distribution name
+>
+> Replace every placeholder:
+> * Rename directory `py_template/` to `your_project/`.
+> * Search-replace `py_template` -> `your_project`.
+> * Search-replace `py-template` -> `your-project`.
+>
+> ### 3. Update metadata
+>
+> Edit `pyproject.toml` and change the following fields:
+> * `description` - same slogan as in the README.
+> * `authors` -  name & e-mail.
+> * `license` - keep `license = { file = "LICENSE" }`, or replace with `license = "MIT"` (or another SPDX identifier) for clean PyPI classification
 
 
 # py-template
