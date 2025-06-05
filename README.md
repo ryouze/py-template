@@ -184,10 +184,10 @@ poetry install --all-groups
 
 Or `poetry install --with dev` to install only the `dev` group, but the `--all-groups` option is recommended to ensure all non-production dependencies are installed.
 
-To run tests manually, activate the virtual environment and run:
+To run tests manually, use:
 
 ```sh
-pytest -v
+poetry run pytest -v
 ```
 
 
