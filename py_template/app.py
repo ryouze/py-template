@@ -11,6 +11,7 @@ from py_template.core import foo
 # Automatically updated by "poetry-dynamic-versioning"
 __version__ = "0.0.0"
 
+
 def run() -> None:
     """
     Run the application.

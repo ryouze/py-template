@@ -6,11 +6,6 @@ Example module.
 
 from random import randint as _randint
 
-__all__: list[str] = [
-    "bar",
-    "baz",
-]
-
 
 def bar() -> int:
     """
@@ -22,9 +17,7 @@ def bar() -> int:
     return 0
 
 
-def baz(
-    size: int = 10,
-) -> list[int]:
+def baz(size: int = 10) -> list[int]:
     """
     Return a list of random integers between 0 and 100 of the given size.
 
